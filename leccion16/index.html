@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manejo DOM con JavaScript</title>
+    
+</head>
+<body>
+    <h1 id="titulo">Manejo DOM con JavaScript</h1>
+    <br/>
+    <form id="forma">
+        Nombre: <input type="text" id="nombre"/>
+        <br/><br/>
+        Apellido: <input type="text" id="apellido"/>
+    </form>
+    
+   <script>
+        const forma = document.getElementById('forma');
+
+        // delegacion de Evento  o
+        // useCapture basicamente nos permite propagar la informacion que ya hemos configurado en el elemento mas externo y propagarlos  a los mas internos
+
+        forma.addEventListener('focus',(event)=>{
+           event.target.style.background = 'pink'
+       },true);
+       forma.addEventListener('blur',(event)=>{
+           event.target.style.background = 'white'
+       },true);
+
+   </script>
+</body>
+</html>
